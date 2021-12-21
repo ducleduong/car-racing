@@ -1,5 +1,5 @@
 Chào mừng bạn đến với game Xe vượt chướng ngại vật!!!!!
-Tác giả: Lê Dương Đức & Phạm Trung Kiên
+Tác giả: Lê Dương Đức 
 
 ---------------------------------------------------------
 
