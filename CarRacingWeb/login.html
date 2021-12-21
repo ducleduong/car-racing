@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Car Racing - Sign Up</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="http://localhost:8000/css/style.css" type="text/css" media="all">
+	<link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+</head>
+
+<body>
+
+	<h1><img src="./images/mainLabel1.png"/></h1>
+
+	<div class="w3layoutscontaineragileits">
+	<h2>REGISTER</h2>
+		<form action="auth" method="POST">
+			<input type="text" Name="username" placeholder="USERNAME" required="">
+			<input type="password" Name="password" placeholder="PASSWORD" id = "pass" required="">
+			<input type="password" Name="confirmPassword" id = "confirm" placeholder="CONFIRM PASSWORD" required="">
+			<div class="aitssendbuttonw3ls">
+				<input type="submit" value="REGISTER" onclick="check()">
+				<p> To login <span>→</span> <a id = "login" href="#"> Click Here</a></p>
+				<div class="clear"></div>
+			</div>
+		</form>
+	</div>
+	
+	<div class="w3footeragile">
+		<p> &copy; 2020 Design by Lê Dương Đức & Phạm Trung Kiên</p>
+	</div>
+
+	<script>
+		function check(){
+			var pass = document.getElementById('pass').value;
+			var confirm = document.getElementById('confirm').value;
+
+			if(pass != confirm){
+				alert('Password and confirm password do not match');
+			}
+		}
+	</script>
+</body>
+
+</html>

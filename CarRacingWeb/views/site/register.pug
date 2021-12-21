@@ -1,0 +1,30 @@
+extends ../layout/layout-sign.pug
+
+block title
+    title Car Racing - Sign Up
+
+block content
+  .w3layoutscontaineragileits
+    h2 REGISTER
+    h3 #{errMess}
+        form(action='/error' method='POST')
+          input(type='text' name='username' placeholder='USERNAME' required='')
+          input#pass(type='password' name='password' placeholder='PASSWORD' required='')
+          input#confirm(type='password' name='confirmPassword' placeholder='CONFIRM PASSWORD' required='')
+          .aitssendbuttonw3ls
+            input(type='submit' value='REGISTER' onclick='check()')
+            p
+              | Have a account ? 
+              span &rarr;
+              a#login(href='/login')  Login
+            .clear
+  .w3footeragile
+    p  &copy; 2020 Design by L&ecirc; D&#x1B0;&#x1A1;ng &Dstrok;&#x1EE9;c &amp; Ph&#x1EA1;m Trung Ki&ecirc;n
+  script.
+    function check(){
+    var pass = document.getElementById('pass').value;
+    var confirm = document.getElementById('confirm').value;
+    if(pass != confirm){
+    alert('Password and confirm password do not match');
+    }
+    }

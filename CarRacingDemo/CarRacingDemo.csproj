@@ -1,0 +1,814 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B619BC7F-E996-4FBE-9465-0F90B23B51AC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CarRacingDemo</RootNamespace>
+    <AssemblyName>CarRacingDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Character.cs" />
+    <Compile Include="ChooseCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseCar.Designer.cs">
+      <DependentUpon>ChooseCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coin.cs" />
+    <Compile Include="CommandSQL.cs" />
+    <Compile Include="Skill.cs" />
+    <Compile Include="InGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InGame.Designer.cs">
+      <DependentUpon>InGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Missile.cs" />
+    <Compile Include="ProcessGame.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicClass.cs" />
+    <Compile Include="Rank.cs" />
+    <Compile Include="Ranking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ranking.Designer.cs">
+      <DependentUpon>Ranking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignInForm.Designer.cs">
+      <DependentUpon>SignInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Store.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Store.Designer.cs">
+      <DependentUpon>Store.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChooseCar.resx">
+      <DependentUpon>ChooseCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InGame.resx">
+      <DependentUpon>InGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Ranking.resx">
+      <DependentUpon>Ranking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignInForm.resx">
+      <DependentUpon>SignInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Store.resx">
+      <DependentUpon>Store.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_SignIn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_SignUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mainLabel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mainLabel1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_Exit_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_SignIn_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_SignUp_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blurBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_BACK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_BACK_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_BACK2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blurBackground2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SignInLabel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SignUpLabel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroundmainmenu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\levelicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroundicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fgfg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\__custom_showroom_1583575908.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2e477350f61a7a674b137254ad6123ae.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\70c1c93d00c07f27.jpg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\193-1937890_yamaha-yzf-r15-v3-main-image-yamaha-r15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\580b585b2edbce24c47b2c8d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\55290.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\74545.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\667049f2e39d202b6bd2542db7610c62.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5396765-cash-dollar-coin-currency-png-image-free-download-searchpngcom-dollar-coin-png-715_715.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\áđá.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\áđâsđâsdá.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ambulance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Animated-Cars-HD-Wallpaper-1024x819.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroundicon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackgroundMain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroundmainmenu1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blurBackground1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blurBackground21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bronze.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_BACK1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_BACK_hover1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_BACK21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_CONTINUE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_CONTINUE_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_Exit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_Exit_hover1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_INVENTORY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_LOGOUT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_RANKING.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_RANKING2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_REVIEVE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_REVIEVE_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_SHOP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_SignIn1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_SignIn_hover1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_SignUp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_SignUp_hover1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_START.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_START_HOVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carGrey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carOrange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carPink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CarRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carYellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipart101458.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipart1014581.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipart1314235.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipart2610159.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipart3005101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipart26101591.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipart30051011.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Daco_5025540.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExitToMainMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExitToMainMenu_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\explosion.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fgfg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\freezeTime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\levelicon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LifeIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mainLabel2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mainLabel11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Missile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roadTrack.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roadTrack1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_background1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SCA-C4063-1__41204.1570991976.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SignInLabel1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SignUpLabel1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\silver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s-l300.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\strns.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tdrc01_car01_b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tdrc01_car01_e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tdrc01_car01_f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tdrc01_car03_a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tdrc01_car03_c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tdrc01_car03_d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tdrc01_car04_a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tdrc01_car04_d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tdrc01_car04_f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tdrc01_car07_b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tdrc01_car07_f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tdrc01_car08_a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tdrc01_car08_b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tdrc01_car08_d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tdrc01_car09_a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tdrc01_car09_e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tdrc01_car09_f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TrafficLight_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TruckBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TruckWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TXB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\580b585b2edbce24c47b2c8d1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blackcar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greencar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orangeCar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lackcar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blackor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_BUY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bovien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blackor_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blurBackground11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blurBackground111.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greencar_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panel2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_BUY_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_BUY_disabled1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_BUY_disabled2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_BUY_disabled5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\destroyer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MotoIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carflame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carflamed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flameICON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bonuscoin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3211.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\missileSkillIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\F1SkillIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SentinalIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\des.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blueCarIg.jpg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\freezeIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\freeze.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Explosion+3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hit.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carstartgarage.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xe1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ger.png.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blurTab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blurTabSelect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blurTabHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blurTab_default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoDestroyer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoR15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\levelicon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoLam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoPhoenix.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoF1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoFreeze.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoLam1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoPhoenix1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoR151.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoRocket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoSentiel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoDestroyer1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoSentiel1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoDestroyerSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoF1Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoFreezeSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoLamSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoPhoenixSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoR15Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoRocketSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoSentielSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defaultde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DefaultSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defaultCar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lamborCar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lamborCarg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\freezeCar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\destroyerLabel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\F1Label.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\freezeLabel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lamborginiLabel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PhoenixLabel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R15Label.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RocketLabel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sentinelLabel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_GARAGE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\garage label.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blurTab_F1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_VISIT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_VISIT_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_GARAGE_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_LOGOUT_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_RANKING_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_SHOP_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTN_RANKING21.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.85.0.4183.8700\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.85.0.4183.8700\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.85.0.4183.8700\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.85.0.4183.8700\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+  </Target>
+</Project>

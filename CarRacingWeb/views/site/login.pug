@@ -1,0 +1,20 @@
+extends ../layout/layout-sign.pug 
+
+block title
+    title Car Racing - Sign In
+block content
+    .w3layoutscontaineragileits
+        h2 LOGIN
+        h3 #{errMess}
+        form(action='/errorlog' method='POST')
+            input(type='text' name='username' placeholder='USERNAME' required='')
+            input#pass(type='password' name='password' placeholder='PASSWORD' required='')
+            .aitssendbuttonw3ls
+                input(type='submit' value='LOGIN')
+                p
+                    | Doesn't have a account ? 
+                    span &rarr;
+                    a#login(href='/regi')  Register
+                .clear
+    .w3footeragile
+        p  &copy; 2020 Design by L&ecirc; D&#x1B0;&#x1A1;ng &Dstrok;&#x1EE9;c &amp; Ph&#x1EA1;m Trung Ki&ecirc;n

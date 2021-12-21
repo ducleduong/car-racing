@@ -1,0 +1,66 @@
+extends ../layout/layout-index.pug 
+
+block content
+  header
+    .subcontainer
+      .left-item
+        a.logo-box
+          img.logo(src='./images/icongame.ico')
+        a#nav(href = '/') Home page
+        a#nav(href='#') News
+        a#nav(href ='#') Community
+        a#nav(href = '#') Support
+        a#nav(href= '#') Download
+      .right-item.log
+        a.sign(href = '/logout') Log out
+        a.log Coin: #{coin}
+        a.log Level: #{level}
+        a.log #{username}
+    .bg1
+  .content
+    .ranking
+      .tab
+        table.table.table-dark.table-striped
+          thead
+            tr
+              th User Name
+              th Score
+          tbody
+            each row in result
+              tr
+                th= row.UserName
+                th= row.BestScore
+    .slider
+      #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+        ol.carousel-indicators
+          li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
+          li(data-target='#carouselExampleIndicators' data-slide-to='1')
+          li(data-target='#carouselExampleIndicators' data-slide-to='2')
+          li(data-target='#carouselExampleIndicators' data-slide-to='3')
+          li(data-target='#carouselExampleIndicators' data-slide-to='4')
+          li(data-target='#carouselExampleIndicators' data-slide-to='5')
+          li(data-target='#carouselExampleIndicators' data-slide-to='6')
+          li(data-target='#carouselExampleIndicators' data-slide-to='7')
+        .carousel-inner
+          .carousel-item.active
+            img.d-block.w-100.img-fluid(src='./images/freeze.png' alt='First slide')
+          .carousel-item
+            img.d-block.w-100.img-fluid(src='./images/flame master.png' alt='Second slide')
+          .carousel-item
+            img.d-block.w-100.img-fluid(src='./images/lamborgini.png' alt='Third slide')
+          .carousel-item
+            img.d-block.w-100.img-fluid(src='./images/rocket.png' alt='Fourth slide')
+          .carousel-item
+            img.d-block.w-100.img-fluid(src='./images/r15.png' alt='Fifth slide')
+          .carousel-item
+            img.d-block.w-100.img-fluid(src='./images/sentinel.png' alt='Sixth slide')
+          .carousel-item
+            img.d-block.w-100.img-fluid(src='./images/f1.png' alt='Seventh slide')
+          .carousel-item
+            img.d-block.w-100.img-fluid(src='./images/destroyer.png' alt='Eighth slide')
+        a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.sr-only Previous
+        a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.sr-only Next
